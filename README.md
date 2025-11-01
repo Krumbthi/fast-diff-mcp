@@ -1,3 +1,6 @@
+The following guide was written by kweinmeister on medium
+This is his repo https://github.com/kweinmeister/fast-diff-mcp/tree/main
+
 # Python and Rust interoperability: A walkthrough for building a high performance MCP server
 
 Oct 20, 2025
