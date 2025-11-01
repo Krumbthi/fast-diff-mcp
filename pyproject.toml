@@ -1,0 +1,35 @@
+[build-system]
+requires = ["maturin>=1.9,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "fast-diff-mcp"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+dependencies = [
+    "fastmcp>=2.13.0.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "faker>=37.12.0",
+    "fast-diff-mcp",
+    "maturin>=1.9.6",
+    "pyo3-stubgen>=0.3.0",
+    "pyperf>=2.9.0",
+]
+[tool.maturin]
+features = ["pyo3/extension-module"]
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+[tool.uv.sources]
+fast-diff-mcp = { workspace = true, editable = true }
